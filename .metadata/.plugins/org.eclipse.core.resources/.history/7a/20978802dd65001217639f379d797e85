@@ -1,0 +1,12 @@
+package com.ROTH.Framwork;
+
+import java.util.ArrayList;
+
+import quicktime.qd3d.math.Vector2D;
+
+public interface ROTHController {
+
+	Vector2D getMoveVector();
+	ArrayList<Character> getActionList();
+	
+}

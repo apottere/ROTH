@@ -1,0 +1,70 @@
+package com.ROTH.Framwork;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.ArrayList;
+
+import quicktime.qd3d.math.Vector2D;
+
+
+
+public class ROTHDesktopController implements ROTHController, KeyListener {
+
+	
+	private ArrayList<Character> actions = new ArrayList<Character>();
+	private Vector2D dir=null;
+	
+	public ROTHDesktopController() {
+		dir = new Vector2D();
+	}
+	
+	
+	public Vector2D getMoveVector() {
+		
+		return dir;
+	}
+
+
+	public ArrayList<Character> getActionList() {
+		return actions;
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		
+		if(e.equals(KeyEvent.VK_W) || e.equals(KeyEvent.VK_UP)){
+			dir.setY(1);
+		}else if(e.equals(KeyEvent.VK_S) || e.equals(KeyEvent.VK_DOWN)){
+			dir.setY(-1);
+		}else if(e.equals(KeyEvent.VK_A) || e.equals(KeyEvent.VK_LEFT)){
+			dir.setX(-1);
+		}else if(e.equals(KeyEvent.VK_D) || e.equals(KeyEvent.VK_RIGHT)){
+			dir.setX(1);
+		}else
+			System.out.println("Key is: " + e.getKeyChar());
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		
+		if(e.equals(KeyEvent.VK_W) || e.equals(KeyEvent.VK_UP)){
+			dir.setY(-1);
+		}else if(e.equals(KeyEvent.VK_S) || e.equals(KeyEvent.VK_DOWN)){
+			dir.setY(1);
+		}else if(e.equals(KeyEvent.VK_A) || e.equals(KeyEvent.VK_LEFT)){
+			dir.setX(1);
+		}else if(e.equals(KeyEvent.VK_D) || e.equals(KeyEvent.VK_RIGHT)){
+			dir.setX(-1);
+		}
+		
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

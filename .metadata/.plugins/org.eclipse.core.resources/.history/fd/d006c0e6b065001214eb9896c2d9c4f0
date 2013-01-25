@@ -1,0 +1,31 @@
+package com.ROTH.Framwork;
+
+import quicktime.qd3d.math.Vector2D;
+
+public class ROTHLevelActor {
+	
+	private Vector2D position;
+	private final String tag;
+	
+	public ROTHLevelActor(String tag) {
+		this.tag = tag; 
+	}
+	
+	
+	
+
+	public Vector2D getPosition() {
+		return position;
+	}
+
+	public void setPosition(Vector2D position) {
+		this.position = position;
+	}
+
+	public String getTag() {
+		return tag;
+	}
+	
+	
+
+}

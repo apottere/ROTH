@@ -1,0 +1,7 @@
+package com.ROTH.Framwork;
+
+public interface ROTHWindow{
+	
+	public void SetName(String name);
+
+}

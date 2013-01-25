@@ -1,0 +1,114 @@
+package com.ROTH.Framwork;
+
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
+public class ROTHLevelActor {
+	
+	private int PosX;
+	private int PosY;
+	private final String tag;
+	
+	BufferedImage bigImg;// = ImageIO.read(new File("sheet.png"));
+
+
+	private int spriteWidth = 10;
+	private int spriteHeight = 10;
+	private int spriteRows = 5;
+	private int spriteCols = 5;
+		
+	Image actor = null;
+	
+	public ROTHLevelActor(String tag, File file, int xpos, int ypos) {
+		this.tag = tag; 
+		this.actor = actor;
+		PosX=xpos;
+		PosY=ypos;
+		
+		BufferedImage[] sprites = new BufferedImage[rows * cols];
+
+		for (int i = 0; i < rows; i++)
+		{
+		    for (int j = 0; j < cols; j++)
+		    {
+		        sprites[(i * cols) + j] = bigImg.getSubimage(
+		            j * width,
+		            i * height,
+		            width,
+		            height
+		        );
+		    }
+		}
+		
+	}
+	
+	public int getSpriteWidth() {
+		return spriteWidth;
+	}
+
+	public void setSpriteWidth(int spriteWidth) {
+		this.spriteWidth = spriteWidth;
+	}
+
+	public int getSpriteHeight() {
+		return spriteHeight;
+	}
+
+	public void setSpriteHeight(int spriteHeight) {
+		this.spriteHeight = spriteHeight;
+	}
+
+	public int getSpriteRows() {
+		return spriteRows;
+	}
+
+	public void setSpriteRows(int spriteRows) {
+		this.spriteRows = spriteRows;
+	}
+
+	public int getSpriteCols() {
+		return spriteCols;
+	}
+
+	public void setSpriteCols(int spriteCols) {
+		this.spriteCols = spriteCols;
+	}
+
+	public void SetPosition(int x, int y){
+		this.setPosX(x);
+		this.setPosY(y);
+	}
+	
+	public void move(int x, int y){
+		setPosX(getPosX() + x);
+		setPosY(getPosY() + y);
+	}
+
+	
+
+	public String getTag() {
+		return tag;
+	}
+
+	public int getPosX() {
+		return PosX;
+	}
+
+	public void setPosX(int posX) {
+		PosX = posX;
+	}
+
+	public int getPosY() {
+		return PosY;
+	}
+
+	public void setPosY(int posY) {
+		PosY = posY;
+	}
+	
+	
+
+}

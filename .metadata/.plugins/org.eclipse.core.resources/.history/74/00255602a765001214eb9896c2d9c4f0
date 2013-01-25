@@ -1,0 +1,10 @@
+package com.ROTH.Framwork;
+
+import java.awt.Image;
+
+public interface ROTHPanel {
+
+	void addChild(Object obj);
+	void SetMap(Image map);
+	
+}

@@ -1,0 +1,11 @@
+1358976016847	Rename type 'ROTHFrame'
+1358976915212	Move folder
+1358980457046	Encapsulate field 'position'
+1358980530370	Encapsulate field 'tag'
+1358980609910	Rename type 'ROTHActor'
+1358999579083	Rename type 'DesktopPanel'
+1359001566274	Encapsulate field 'PosX'
+1359001570218	Encapsulate field 'PosY'
+1359004018086	Encapsulate field 'actors'
+1359072308743	Encapsulate field 'spriteWidth'
+1359072314268	Encapsulate field 'spriteHeight'

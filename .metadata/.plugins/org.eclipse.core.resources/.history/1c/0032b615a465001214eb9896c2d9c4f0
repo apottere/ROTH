@@ -1,0 +1,21 @@
+import javax.swing.JFrame;
+
+import com.ROTH.Framwork.DesktopPanel;
+import com.ROTH.Framwork.ROTHDesktopWindow;
+import com.ROTH.Framwork.ROTHWindow;
+import com.sun.java.swing.plaf.windows.resources.windows;
+
+
+
+public class Main {
+
+	static ROTHWindow window = new ROTHDesktopWindow();
+	
+	public static void main(String[] args) {
+		
+		DesktopPanel des = new DesktopPanel();
+		window.SetName("Test");
+
+	}
+
+}

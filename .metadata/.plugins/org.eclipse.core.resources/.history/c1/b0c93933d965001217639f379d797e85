@@ -1,0 +1,37 @@
+package com.ROTH.Framwork;
+
+import java.awt.Image;
+import java.awt.event.ActionListener;
+
+import quicktime.qd3d.math.Vector2D;
+
+public class ROTHLevelActor {
+	
+	private Vector2D position;
+	private final String tag;
+	
+	Image actor = null;
+	
+	public ROTHLevelActor(String tag, Image actor) {
+		this.tag = tag; 
+		this actor = actor;
+	}
+	
+	
+	
+
+	public Vector2D getPosition() {
+		return position;
+	}
+
+	public void setPosition(Vector2D position) {
+		this.position = position;
+	}
+
+	public String getTag() {
+		return tag;
+	}
+	
+	
+
+}

@@ -1,0 +1,65 @@
+package com.ROTH.Framwork;
+
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+public class ROTHLevelActor {
+	
+	private int PosX;
+	private int PosY;
+	private final String tag;
+	
+	
+	Image actor = null;
+	
+	public ROTHLevelActor(String tag, Image actor, int x, int y) {
+		this.tag = tag; 
+		//this.actor = actor;
+		try {
+			this.actor = ImageIO.read(new File("Assests/hero.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		PosX=x;
+		PosY=y;
+	}
+	
+	public void SetPosition(int x, int y){
+		this.setPosX(x);
+		this.setPosY(y);
+	}
+	
+	public void move(int x, int y){
+		setPosX(getPosX() + x);
+		setPosY(getPosY() + y);
+	}
+
+	
+
+	public String getTag() {
+		return tag;
+	}
+
+	public int getPosX() {
+		return PosX;
+	}
+
+	public void setPosX(int posX) {
+		PosX = posX;
+	}
+
+	public int getPosY() {
+		return PosY;
+	}
+
+	public void setPosY(int posY) {
+		PosY = posY;
+	}
+	
+	
+
+}

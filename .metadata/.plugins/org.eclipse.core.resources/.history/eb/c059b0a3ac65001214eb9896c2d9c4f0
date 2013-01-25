@@ -1,0 +1,44 @@
+package com.ROTH.Game;
+
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+
+import com.ROTH.Framwork.DesktopPanel;
+import com.ROTH.Framwork.ROTHDesktopWindow;
+import com.ROTH.Framwork.ROTHPanel;
+import com.ROTH.Framwork.ROTHWindow;
+import com.sun.java.swing.plaf.windows.resources.windows;
+
+
+
+public class Main {
+
+	static ROTHWindow window = new ROTHDesktopWindow();
+	static Image map = null;
+	
+	public static void main(String[] args) {
+		
+		
+		ROTHPanel panel =  new DesktopPanel();
+		window.addChild((Object)panel);
+		
+		try {
+			Image map = ImageIO.read(new File("Assests/space.jpg"));
+			panel.setMap(map);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+		window.SetName("Test");
+		window.SetVisible(true);
+		
+
+	}
+
+}
