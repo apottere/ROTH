@@ -73,7 +73,7 @@ public class ROTHLevelActor {
 		
 		g2d.drawImage(this.actor, this.getPosX(), this.getPosY(), this.getPosX()+50, this.getPosY()+60, currentSpritePosX, currentSpritePosY, currentSpritePosX+spriteWidth, currentSpritePosY+spriteHeight, null);
 	
-		System.out.println(animation+" "+currentSpritePosX+" "+currentSpritePosY);
+		//System.out.println(animation+" "+currentSpritePosX+" "+currentSpritePosY);
 		
 	}
 	

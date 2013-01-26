@@ -1,0 +1,28 @@
+package com.ROTH.Framwork;
+
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.util.ArrayList;
+
+public class RenderingCheckerThread extends Thread {
+	
+	public ArrayList<ArrayList<Image>> map = null;
+	public ArrayList<ArrayList<Image>> rendermap = null;
+	public Graphics2D g2d = null;
+	
+	public void run (){
+		
+		while(true){
+			
+			if(map == null || rendermap == null || g2d == null){
+				
+			}else{
+				System.out.println("something ");
+		
+			}
+		}
+	}
+	
+	
+
+}
