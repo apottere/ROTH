@@ -1,0 +1,20 @@
+package com.ROTH.Framwork;
+
+import java.awt.Image;
+import java.util.ArrayList;
+
+public class RenderingCheckerThread extends Thread {
+	
+	ArrayList<ArrayList<Image>> map;
+	ArrayList<ArrayList<Image>> rendermap;
+	
+	public void run (){
+		
+		while(true){
+			System.out.println("something ");
+		}
+	}
+	
+	
+
+}
