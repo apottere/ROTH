@@ -22,6 +22,7 @@ public class ROTHDesktopLevelPanel extends JPanel implements ROTHPanel {
 	private ROTHController controller=null;
 	private int Xoffset=0;
 	private int Yoffset=0;
+	private int speedModifier = 2;
 	
 	public ROTHDesktopLevelPanel(ArrayList<ArrayList<Image>> map, ROTHController controller){
 		
@@ -86,16 +87,16 @@ public class ROTHDesktopLevelPanel extends JPanel implements ROTHPanel {
 			user.animate("up");
 		}else if(x>0){
 			user.animate("left");
-			user.move(x, y);
+			user.move(x*speedModifier, y*speedModifier);
 		}else if(x<0){
 			user.animate("right");
-			user.move(x, y);
+			user.move(x*speedModifier, y*speedModifier);
 		}else if(y>0){
 			user.animate("down");
-			user.move(x, y);
+			user.move(x*speedModifier, y*speedModifier);
 		}else if(y<0){
 			user.animate("up");
-			user.move(x, y);
+			user.move(x*speedModifier, y*speedModifier);
 		}
 		
 		//user.move(x,y);

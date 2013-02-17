@@ -1,7 +1,0 @@
-package com.ROTH.Framwork;
-
-public interface ROTHPanel {
-
-	void addChild();
-	
-}

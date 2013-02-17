@@ -1,4 +1,6 @@
 *.class
+.plugins\
+.plugins/
 
 # Package Files #
 *.jar

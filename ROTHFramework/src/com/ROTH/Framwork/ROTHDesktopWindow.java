@@ -2,8 +2,10 @@ package com.ROTH.Framwork;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.JMenuBar;
 
 public class ROTHDesktopWindow extends JFrame implements ROTHWindow {
 
@@ -21,10 +23,13 @@ public class ROTHDesktopWindow extends JFrame implements ROTHWindow {
 
 		this.setLayout(new BorderLayout());
 		
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		this.setSize( (int)(toolkit.getScreenSize().width * 0.9), (int)(toolkit.getScreenSize().height * 0.9) );
+		//this.setResizable(false);
 		this.setVisible(true);
-		//this.setSize(1280, 720);
-		this.setResizable(false);
-		this.addKeyListener((ROTHDesktopController)controller);
+		
+		if(controller != null)
+			this.addKeyListener((ROTHDesktopController)controller);
 		
 	}
 
@@ -44,6 +49,12 @@ public class ROTHDesktopWindow extends JFrame implements ROTHWindow {
 	public void addChild(Object obj) {
 		this.add((Component) obj);
 	
+	}
+
+	@Override
+	public void SetJMenuBar(JMenuBar menuBar) {
+		this.setJMenuBar(menuBar);
+		
 	}
 	
 }

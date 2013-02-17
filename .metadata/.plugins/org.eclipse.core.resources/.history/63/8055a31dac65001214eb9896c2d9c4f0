@@ -1,9 +1,0 @@
-package com.ROTH.Framwork;
-
-import java.awt.Image;
-
-public interface ROTHPanel {
-
-
-	
-}
