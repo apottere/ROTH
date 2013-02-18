@@ -14,7 +14,7 @@ public class ROTHDesktopWindow extends JFrame implements ROTHWindow {
 	 */
 	private static final long serialVersionUID = -1653578647406467260L;
 
-	public ROTHDesktopWindow(ROTHController controller) {
+	public ROTHDesktopWindow() {
 		super();
 		
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -25,11 +25,15 @@ public class ROTHDesktopWindow extends JFrame implements ROTHWindow {
 		
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		this.setSize( (int)(toolkit.getScreenSize().width * 0.9), (int)(toolkit.getScreenSize().height * 0.9) );
-		//this.setResizable(false);
-		this.setVisible(true);
 		
-		if(controller != null)
-			this.addKeyListener((ROTHDesktopController)controller);
+		this.setVisible(true);
+	}
+		
+	public ROTHDesktopWindow(ROTHController controller) {
+		
+		this();
+		
+		this.addKeyListener((ROTHDesktopController)controller);
 		
 	}
 
@@ -55,6 +59,11 @@ public class ROTHDesktopWindow extends JFrame implements ROTHWindow {
 	public void SetJMenuBar(JMenuBar menuBar) {
 		this.setJMenuBar(menuBar);
 		
+	}
+	
+	@Override
+	public void Repaint() {
+		this.repaint();
 	}
 	
 }

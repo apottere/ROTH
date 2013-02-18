@@ -1,0 +1,38 @@
+<map>
+	<level>
+		<name>Introduction</name>
+		<size>400,400</size>
+		<terrain>
+			<tile>
+				<file>grass_tile.png</file>
+				<coord>1,1</coord>
+				
+				
+				
+				
+				
+			</tile>
+		</terrain>
+		
+		<entities>
+			<entity>
+				<type>building</type>
+				<file>foo.png</file>
+				<size>60,60</size>
+				<pos>200,300</pos>
+			</entity>
+			<entity>
+				<type>transition</type>
+				<size>30,30</size>
+				<pos>150,325</pos>
+				<dest>0,0</dest>
+			</entity>
+			<entity>
+				<type>npc</type>
+				<file>bar.png</file>
+				<size>30,30</size>
+				<pos>150,325</pos>
+			</entity>
+		</entities>
+	</level>
+</map>

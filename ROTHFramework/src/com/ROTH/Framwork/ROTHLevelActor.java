@@ -28,7 +28,7 @@ public class ROTHLevelActor {
 		this.tag = tag; 
 		//this.actor = actor;
 		try {
-			this.actor = ImageIO.read(new File("Assests/hero.png"));
+			this.actor = ImageIO.read(new File("assets/hero.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

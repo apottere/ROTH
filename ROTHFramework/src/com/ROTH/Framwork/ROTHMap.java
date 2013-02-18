@@ -12,15 +12,17 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class ROTHMapParser {
+public class ROTHMap {
 	
 	private DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 	private DocumentBuilder builder;
 	private Document document;
 	private Element root;
 	private NodeList nodes;
+	
+	public final String name;
 
-	public ROTHMapParser() {
+	public ROTHMap(FileInputStream filename) throws MalformedRMLException {
 		
 		builder = null;
 		try {
@@ -28,11 +30,9 @@ public class ROTHMapParser {
 		} catch (ParserConfigurationException e) {
 		    e.printStackTrace();  
 		}
-	}
-	
-	public void parse(String filename) throws MalformedRMLException {
+		
 		try {
-		    document = builder.parse(new FileInputStream(filename));
+		    document = builder.parse(filename);
 		} catch (SAXException e) {
 		    throw new MalformedRMLException(e);
 		} catch (IOException e) {
@@ -42,7 +42,8 @@ public class ROTHMapParser {
 		root = document.getDocumentElement();
 		nodes = root.getChildNodes();
 		
-		System.out.println(nodes.item(1));
+			
+		name = nodes.item(1).getTextContent();
 		
 	}
 

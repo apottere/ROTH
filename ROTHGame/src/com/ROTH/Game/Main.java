@@ -28,7 +28,7 @@ public class Main {
 		
 		ROTHPanel panel = null;
 		try {
-			Image map = ImageIO.read(new File("Assests/tile.png"));
+			Image map = ImageIO.read(new File("assets/tile_grass50.png"));
 			
 			ArrayList<ArrayList<Image>> tileMap = new ArrayList<ArrayList<Image>>();
 			

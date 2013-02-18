@@ -8,5 +8,6 @@ public interface ROTHWindow{
 	public void SetVisible(boolean value);
 	public void addChild(Object obj);
 	public void SetJMenuBar(JMenuBar menuBar);
+	public void Repaint();
 
 }

@@ -4,13 +4,22 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 import com.ROTH.Framwork.ROTHDesktopWindow;
-import com.ROTH.Framwork.ROTHMapParser;
+import com.ROTH.Framwork.ROTHMap;
 import com.ROTH.Framwork.ROTHWindow;
 
 public class Editor implements ActionListener{
@@ -20,14 +29,19 @@ public class Editor implements ActionListener{
 	private String mapDir;
 	private String mapName;
 	private JFileChooser chooser = new JFileChooser();
+	private FileNameExtensionFilter filter = new FileNameExtensionFilter("ROTH Maps", "rml");
+	private String windowName = "ROTH Map Editor";
 	
-	private ROTHMapParser parser = new ROTHMapParser();
+	private Vector<ROTHMap> maps = new Vector<ROTHMap>();
 	
 	private JMenuBar menuBar = new JMenuBar();
+	private JTabbedPane tabs = new JTabbedPane(JTabbedPane.TOP);
 	
 	public Editor() {
 		//TODO: TEMPORARY!  (For testing convenience)
-		chooser.setCurrentDirectory(new File("Z:\\My Documents\\GitHub\\ROTH\\ROTHGame\\Assests\\maps\\"));
+		chooser.setCurrentDirectory(new File("Z:\\My Documents\\GitHub\\ROTH\\ROTHGame\\assets\\maps\\"));
+		
+		chooser.setFileFilter(filter);
 		
 		buildGUI();
 		
@@ -43,6 +57,9 @@ public class Editor implements ActionListener{
 		menu.add(open);
 		menuBar.add(menu);
 		window.SetJMenuBar(menuBar);
+		window.SetName(windowName);
+		
+		window.addChild(tabs);
 		
 		window.SetVisible(true);
 		
@@ -70,27 +87,24 @@ public class Editor implements ActionListener{
 			mapDir = chooser.getCurrentDirectory().getAbsolutePath();
 			mapName = chooser.getSelectedFile().getName();
 			
-//			System.out.println("You chose a folder!");
-//			System.out.println(this.getMapPath());
+			window.SetName(windowName + ": " + mapName);
 			
-			this.parseMap();
+			ROTHMap newmap = null;
+			try {
+				newmap = new ROTHMap(new FileInputStream(getMapPath()));
+				maps.add(newmap);
+				
+				JPanel panel = new JPanel();
+				panel.add(new JLabel(newmap.name));
+				tabs.add(newmap.name, panel);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			
-		} else {
-//			System.out.println("No file chosen.");
+			
+				
 		}
-		
-	}
-	
-	
-	public void parseMap() {
-		
-		try {
-			parser.parse(getMapPath());
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		
 	}
 	
 	
